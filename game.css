@@ -34,7 +34,7 @@ body{
 }
 
 .incorrect{
-    background: linear-gradient(32deg, rgb(rgb(250, 5, 5)) 0%, rgb(rgb(240, 12, 12)) 100%);
+    background: linear-gradient(32deg, rgb(88, 86, 86) 0%, rgb(104, 101, 101) 100%);
 }
 
 /* Heads up display */
