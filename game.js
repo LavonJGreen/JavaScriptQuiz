@@ -9,7 +9,8 @@ let acceptingAnswer = true
 let score = 0
 let questionCounter = 0
 let availableQuestions = []
-let counter;
+let timeLeft= 40;
+let timerInterval;
 
 
 let questions = [
@@ -55,6 +56,16 @@ startGame = () =>{
     score = 0
     availableQuestions = [...questions]
     getNewQuestion()
+
+    timerInterval = setInterval(function() {
+        timeLeft--;
+        testTimer.textContent = timeLeft;
+    
+        if(timeLeft === 0) {
+          clearInterval(timerInterval);
+          showScore();
+        }
+      }, 1000);
 }
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
@@ -103,7 +114,6 @@ choices.forEach(choice => {
         }, 1000)
     })
 })
-
 
 incrementScore = num => {
     score+=num
